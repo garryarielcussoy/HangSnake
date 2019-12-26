@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <div class="canvas-container">
-        <div class="canvas" id="canvas">
-            <button class="snake" id="snake"></button>
+    <div id="main-menu">
+        <div class="main-menu">
+            <div class="game-title">HANGSNAKE</div>
+            <br />
+            <br />
+            <button class="play-game">Lets Play</button>
+        </div>
+    </div>
+    <div class="toggle-off" id="main-game">
+        <div class="canvas-container">
+            <div class="canvas" id="canvas">
+                <button class="snake" id="snake" onclick="letsPlay()"></button>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>

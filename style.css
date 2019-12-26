@@ -1,3 +1,4 @@
+/* ---------- Main Game ---------- */
 .canvas-container{
     text-align: center;
     width: 100%;
@@ -5,8 +6,8 @@
 
 .canvas{
     background-color: aqua;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border: solid 5px black;
     z-index: 1;
     position: relative;
@@ -20,6 +21,33 @@
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+/* ---------- Displaying Config ---------- */
+.toggle-off{
+    display: none;
+}
+
+/* ---------- Main Menu ---------- */
+.main-menu{
+    background-color: aqua;
+    width: 500px;
+    height: 350px;
+    border: solid 5px black;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.game-title{
+    font-weight: 700;
+    font-size: 3em;
+    text-align: center;
+}
+
+.play-game{
+    font-size: 1.2em;
 }
 
 /* ---------- Placing the Words ---------- */

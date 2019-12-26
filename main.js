@@ -1,5 +1,5 @@
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var animalList = ['CHICKEN', 'CROCODILE', 'SNAKE'];
+var animalList = ['CHICKEN', 'CROCODILE', 'SNAKE', 'TIGER'];
 
 function gameStart(){
     let randomNumb = (Math.floor(Math.random() * animalList.length));
@@ -11,7 +11,7 @@ function gameStart(){
         }
     }
 
-    boundLettersInArea = randomLetters.length + 4;
+    boundLettersInArea = randomLetters.length + 5;
     while (randomLetters.length < boundLettersInArea){
         let randomNumb = (Math.floor(Math.random() * 26));
         if (randomLetters.includes(alphabet[randomNumb]) === false){
@@ -35,8 +35,8 @@ for (let index = 0; index < letters.length; index++){
     divLetterElem.setAttribute("class", `letter letter${index}`);
     let status = true;
     while (status){
-        let xRandom = Math.floor(Math.random() * 30) * 20;
-        let yRandom = Math.floor(Math.random() * 30) * 20;
+        let xRandom = Math.floor(Math.random() * 25) * 20;
+        let yRandom = Math.floor(Math.random() * 25) * 20;
         let coord = [xRandom, yRandom];
         console.log(coordOfLetters);
         console.log(coord);
@@ -49,4 +49,10 @@ for (let index = 0; index < letters.length; index++){
     divLetterElem.style.left = `${coordOfLetters[index][1]}px`;
     divLetterElem.appendChild(letterElem);
     canvas.appendChild(divLetterElem);
+}
+
+// Change screen from main menu to main game
+function letsPlay(){
+    let mainGame = document.getElementById("main-game");
+    let mainMenu = document.getElementById("main-menu");
 }
