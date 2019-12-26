@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Snakeman</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hang Snake</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
-    <div class="canvas-container">
-        <canvas class="canvas" height="500" width="500" style="background-color: #333642"></canvas>
-        <h3>tes2</h3>
+    <div id="main-menu">
+        <div class="main-menu">
+            <div class="game-title">HANGSNAKE</div>
+            <br />
+            <br />
+            <button class="play-game" onclick="letsPlay(); startGame()">Lets Play</button>
+        </div>
+    </div>
+    <div id="main-game" class="toggle-off">
+        <div class="canvas-container">
+            <div class="side-menu"></div>
+            <canvas id="canvas" class="canvas" height="500" width="500" style="background-color: #333642"></canvas>
+        </div>
     </div>
 </body>
+<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/fruit.js"></script>
 <script type="text/javascript" src="../js/snake.js"></script>
 <script type="text/javascript" src="../js/draw.js"></script>

@@ -8,7 +8,7 @@
 }
 
 .side-menu{
-    background-image: url('Wood.jpg');
+    background-image: url('../img/Wood.jpg');
     width: 500px;
     height: 500px;
     border: solid 5px black;
@@ -23,7 +23,7 @@
 
 /* ---------- Main Menu ---------- */
 .main-menu{
-    background-image: url('Wood.jpg');
+    background-image: url('../img/Wood.jpg');
     width: 1273px;
     height: 350px;
     border: solid 5px black;

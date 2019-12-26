@@ -6,6 +6,11 @@ function Snake(){
     this.total = 0;
     this.tail = [];
 
+    this.stop = function(){
+        this.xSpeed = 0
+        this.ySpeed = 0
+    }
+
     this.draw = function(){
         ctx.fillStyle = "#5B8422";
 
@@ -62,7 +67,8 @@ function Snake(){
     }
 
     this.eat = function(fruit){
-        if (this.x === fruit.x && this.y+10 === fruit.y){
+        if ((this.x === fruit.x && this.y === fruit.y) || (this.x+10 === fruit.x && this.y === fruit.y)
+            || (this.x === fruit.x && this.y+20 === fruit.y) || (this.x+10 === fruit.x && this.y+20 === fruit.y) ){
             this.total++;    
             return true
         }
