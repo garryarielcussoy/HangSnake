@@ -1,9 +1,4 @@
 /* ---------- Main Game ---------- */
-.canvas-container{
-    text-align: center;
-    width: 100%;
-}
-
 .canvas{
     background-color: aqua;
     width: 500px;
@@ -24,10 +19,6 @@
 /* ---------- Displaying Config ---------- */
 .toggle-off{
     display: none;
-}
-
-body{
-    text-align: center;
 }
 
 /* ---------- Main Menu ---------- */
