@@ -12,13 +12,13 @@
     position: relative;
 }
 
-#snake{
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.side-menu{
+    background-image: url('Wood.jpg');
+    width: 500px;
+    height: 500px;
+    border: solid 5px black;
+    position: relative;
+    float: right;
 }
 
 /* ---------- Displaying Config ---------- */
@@ -26,10 +26,14 @@
     display: none;
 }
 
+body{
+    text-align: center;
+}
+
 /* ---------- Main Menu ---------- */
 .main-menu{
-    background-color: aqua;
-    width: 500px;
+    background-image: url('Wood.jpg');
+    width: 1273px;
     height: 350px;
     border: solid 5px black;
     position: relative;
