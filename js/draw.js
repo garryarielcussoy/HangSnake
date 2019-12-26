@@ -9,7 +9,7 @@ var snake;
 (function setup(){
 
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var animalList = ['CHICKEN', 'SNAKE', 'TIGER'];
+    var animalList = ['CHICKEN', 'SNAKE', 'TIGER', 'PANDA', 'OCTOPUS'];
     
     let randomNumb = (Math.floor(Math.random() * animalList.length));
     let toGuess = animalList[randomNumb];
@@ -43,29 +43,40 @@ var snake;
     snake = new Snake();
     fruitList = [];
     fruitCoordinat = [];
+    sumOfCoordinat = [];
 
+    console.log(randomLetters);
+    console.log(fruitCoordinat);
     while (fruitList.length < randomLetters.length){
         fruit = new Fruit();
         fruit.pickLocation();
-        if (fruitCoordinat.includes([fruit.x, fruit.y]) === false)
+        uniqueSum = (100000 * fruit.x) + fruit.y; 
+        if (sumOfCoordinat.includes(uniqueSum) === false)
         {
+            console.log("Halooo")
             fruitList.push(fruit);
             fruitCoordinat.push([fruit.x, fruit.y]);
+            sumOfCoordinat.push(uniqueSum);
         }
     }
 
-    console.log(fruitCoordinat);
-    console.log(randomLetters);
-
     target = answerLetters.length
+    let status = 0;
+    let collision = 0;
 
     window.setInterval(()=>{
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         for (i=0; i< randomLetters.length; i++){
             fruitList[i].draw(randomLetters[i]);
         }
-        snake.update();
-        snake.draw();
+
+        if (collision !== -1){
+            collision = snake.update();
+        }
+        
+        if (status !== -2 && target !== 0 && collision !== -1){
+            snake.draw(target);
+        }
 
         for (i=0; i< randomLetters.length; i++){
             if (snake.eat(fruitList[i])){
@@ -79,7 +90,7 @@ var snake;
                             listIndexLetter.push(j);
                         }
                     }
-
+                
                     sideGuessChange = document.getElementById("side-guess");
                     for (j = 0; j<listIndexLetter.length; j++){
                         sideGuessChange.children[listIndexLetter[j]].innerHTML = `${randomLetters[i]} `;
@@ -87,13 +98,23 @@ var snake;
                 }
                 if (target === 0){
                     snake.stop()
+                    let backgroundmusic = document.getElementById("backgroundmusic");
+                    backgroundmusic.pause();
+                    let winningsound = document.getElementById("winning");
+                    winningsound.play();
                     alert("You win!")
                 }
             }            
         }
 
-        snake.cekTabrakBadan(target);
+        if (target !== 0 && status !== -2 && collision !== -1){
+            status = snake.cekTabrakBadan();
+        }
 
+        if (status === -2 || collision === -1){
+            snake.stop();
+        }
+        
     }, 250);
 }());
 

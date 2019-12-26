@@ -7,18 +7,24 @@ function Snake(){
     this.tail = [];
 
     this.stop = function(){
-        this.xSpeed = 0
-        this.ySpeed = 0
+        this.xSpeed = 0;
+        this.ySpeed = 0;
+        for (let i=0; i<this.tail.length;i++){
+            this.tail[i].xSpeed = 0;
+            this.tail[i].ySpeed = 0;
+        }
     }
 
-    this.draw = function(){
-        ctx.fillStyle = "#5B8422";
+    this.draw = function(target = -1){
+        if (target !== 0){
+            ctx.fillStyle = "#5B8422";
 
-        for (let i=0; i<this.tail.length;i++){
-            ctx.fillRect(this.tail[i].x,this.tail[i].y, scale, scale);
+            for (let i=0; i<this.tail.length;i++){
+                ctx.fillRect(this.tail[i].x,this.tail[i].y, scale, scale);
 
-        }
-        ctx.fillRect(this.x, this.y, scale, scale);
+            }
+            ctx.fillRect(this.x, this.y, scale, scale);
+        } 
     }
 
     this.update = function(){
@@ -32,16 +38,20 @@ function Snake(){
         this.y += this.ySpeed;
 
         if (this.x >= canvas.width){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.y >= canvas.height){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.x < 0){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.y < 0){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
     }
     
@@ -76,13 +86,12 @@ function Snake(){
         }
     }
 
-    this.cekTabrakBadan = function(target){
+    this.cekTabrakBadan = function(){
         for (var i=0; i<this.tail.length; i++){
             if (this.x === this.tail[i].x && this.y === this.tail[i].y){
                 this.total++;
-                if (target !== 0){
-                    alert('Bunuh Diri!!!')
-                }    
+                alert('You lose!')
+                return -2;
             }
         }   
     }
