@@ -7,6 +7,7 @@
     background-color: aqua;
     width: 600px;
     height: 600px;
+    border: solid 5px black;
     z-index: 1;
     position: relative;
 }
@@ -28,5 +29,6 @@
     color: black;
     width: 20px;
     height: 20px;
-    font-weight: 700;
+    font-weight: 800;
+    text-align: center;
 }

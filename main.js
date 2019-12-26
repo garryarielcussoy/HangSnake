@@ -33,15 +33,20 @@ for (let index = 0; index < letters.length; index++){
     let letterElem = document.createTextNode(letters[index]);
     let divLetterElem = document.createElement("div");
     divLetterElem.setAttribute("class", `letter letter${index}`);
-    let status = False;
+    let status = true;
     while (status){
         let xRandom = Math.floor(Math.random() * 30) * 20;
         let yRandom = Math.floor(Math.random() * 30) * 20;
         let coord = [xRandom, yRandom];
-        if (coordOfLetters.includes(coord))
+        console.log(coordOfLetters);
+        console.log(coord);
+        if (coordOfLetters.includes(coord) === false){
+            coordOfLetters.push(coord);
+            status = false;
+        }
     }
-    divLetterElem.style.top = `${xRandom}px`;
-    divLetterElem.style.left = `${yRandom}px`;
+    divLetterElem.style.top = `${coordOfLetters[index][0]}px`;
+    divLetterElem.style.left = `${coordOfLetters[index][1]}px`;
     divLetterElem.appendChild(letterElem);
     canvas.appendChild(divLetterElem);
 }
