@@ -70,7 +70,7 @@ var snake;
             fruitList[i].draw(randomLetters[i]);
         }
 
-        if (collision !== -1){
+        if (collision !== -1 || target !== 0 || status !== -2){
             collision = snake.update();
         }
         
