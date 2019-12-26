@@ -1,0 +1,78 @@
+/* ---------- Main Game ---------- */
+.canvas{
+    background-color: aqua;
+    width: 500px;
+    height: 500px;
+    border: solid 5px black;
+    position: relative;
+}
+
+/* ---------- Displaying Config ---------- */
+.toggle-off{
+    display: none;
+}
+
+/* ---------- Main Menu ---------- */
+.main-menu{
+    background-image: url('../img/facebook_cover_photo_2.png');
+    background-position: center;
+    width: 1273px;
+    height: 350px;
+    border: solid 5px black;
+    position: relative;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.game-title{
+    font-weight: 700;
+    font-size: 3em;
+    text-align: center;
+}
+
+.play-game{
+    font-size: 2em;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 230px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.play-game:hover{
+    color: #white;
+    background-color: #00F701;
+}
+
+/* ---------- Placing the Words ---------- */
+.letter0, .letter1, .letter2, .letter3, .letter4, .letter5, .letter6, .letter7, .letter8, .letter9, .letter10, .letter11, .letter12, .letter13, .letter14, .letter15{
+    position: absolute;
+    font-size: 10pt;
+    color: black;
+    width: 20px;
+    height: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* ---------- Side Menu ---------- */
+.side-menu{
+    background-image: url('../img/Wood.jpg');
+    width: 500px;
+    height: 500px;
+    border: solid 5px black;
+    position: relative;
+    text-align: center;
+    float: right;
+}
+
+.side-title{
+    padding-top: 30px;
+}
+
+.valueGuess{
+    font-weight: 800;
+    font-size: 35px;
+    padding: 10px;
+}

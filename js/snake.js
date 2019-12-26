@@ -1,19 +1,30 @@
 function Snake(){
     this.x = 0;
     this.y = 0;
-    this.xSpeed = 10;
+    this.xSpeed = 0;
     this.ySpeed = 0;
     this.total = 0;
     this.tail = [];
 
-    this.draw = function(){
-        ctx.fillStyle = "#5B8422";
-
+    this.stop = function(){
+        this.xSpeed = 0;
+        this.ySpeed = 0;
         for (let i=0; i<this.tail.length;i++){
-            ctx.fillRect(this.tail[i].x,this.tail[i].y, scale, scale);
-
+            this.tail[i].xSpeed = 0;
+            this.tail[i].ySpeed = 0;
         }
-        ctx.fillRect(this.x, this.y, scale, scale);
+    }
+
+    this.draw = function(target = -1){
+        if (target !== 0){
+            ctx.fillStyle = "#5B8422";
+
+            for (let i=0; i<this.tail.length;i++){
+                ctx.fillRect(this.tail[i].x,this.tail[i].y, scale, scale);
+
+            }
+            ctx.fillRect(this.x, this.y, scale, scale);
+        } 
     }
 
     this.update = function(){
@@ -27,16 +38,20 @@ function Snake(){
         this.y += this.ySpeed;
 
         if (this.x >= canvas.width){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.y >= canvas.height){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.x < 0){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
         else if (this.y < 0){
-            alert('Game Over !')
+            alert('Game Over!')
+            return -1
         }
     }
     
@@ -62,7 +77,7 @@ function Snake(){
     }
 
     this.eat = function(fruit){
-        if (this.x === fruit.x && this.y+10 === fruit.y){
+        if (this.x === fruit.x && this.y+20 === fruit.y){
             this.total++;    
             return true
         }
@@ -74,8 +89,9 @@ function Snake(){
     this.cekTabrakBadan = function(){
         for (var i=0; i<this.tail.length; i++){
             if (this.x === this.tail[i].x && this.y === this.tail[i].y){
-                this.total++;    
-                alert('Bunuh Diri!!!')
+                this.total++;
+                alert('You lose!')
+                return -2;
             }
         }   
     }
