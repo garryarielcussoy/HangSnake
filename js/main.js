@@ -19,8 +19,6 @@ function gameStart(){
         }
     }
 
-    console.log(toGuess);
-    console.log(randomLetters);
     return randomLetters;
 }
 
@@ -48,8 +46,6 @@ function letsPlay(){
             let xRandom = Math.floor(Math.random() * 25) * 5;
             let yRandom = Math.floor(Math.random() * 25) * 5;
             let coord = [xRandom, yRandom];
-            console.log(coordOfLetters);
-            console.log(coord);
             if (coordOfLetters.includes(coord) === false){
                 coordOfLetters.push(coord);
                 status = false;

@@ -1,7 +1,7 @@
 function Snake(){
     this.x = 0;
     this.y = 0;
-    this.xSpeed = 10;
+    this.xSpeed = 0;
     this.ySpeed = 0;
     this.total = 0;
     this.tail = [];
@@ -67,8 +67,7 @@ function Snake(){
     }
 
     this.eat = function(fruit){
-        if ((this.x === fruit.x && this.y === fruit.y) || (this.x+10 === fruit.x && this.y === fruit.y)
-            || (this.x === fruit.x && this.y+20 === fruit.y) || (this.x+10 === fruit.x && this.y+20 === fruit.y) ){
+        if (this.x === fruit.x && this.y+20 === fruit.y){
             this.total++;    
             return true
         }
@@ -77,11 +76,13 @@ function Snake(){
         }
     }
 
-    this.cekTabrakBadan = function(){
+    this.cekTabrakBadan = function(target){
         for (var i=0; i<this.tail.length; i++){
             if (this.x === this.tail[i].x && this.y === this.tail[i].y){
-                this.total++;    
-                alert('Bunuh Diri!!!')
+                this.total++;
+                if (target !== 0){
+                    alert('Bunuh Diri!!!')
+                }    
             }
         }   
     }

@@ -13,12 +13,15 @@
             <div class="game-title">HANGSNAKE</div>
             <br />
             <br />
-            <button class="play-game" onclick="letsPlay(); startGame()">Lets Play</button>
+            <button class="play-game" onclick="letsPlay()">Lets Play</button>
         </div>
     </div>
     <div id="main-game" class="toggle-off">
         <div class="canvas-container">
-            <div class="side-menu"></div>
+            <div class="side-menu">
+                <h1 class="side-title" id="side-title">Guess the Word</h1>
+                <div class="side-guess" id="side-guess"></div>
+            </div>
             <canvas id="canvas" class="canvas" height="500" width="500" style="background-color: #333642"></canvas>
         </div>
     </div>

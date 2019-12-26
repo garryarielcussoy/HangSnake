@@ -7,15 +7,6 @@
     position: relative;
 }
 
-.side-menu{
-    background-image: url('../img/Wood.jpg');
-    width: 500px;
-    height: 500px;
-    border: solid 5px black;
-    position: relative;
-    float: right;
-}
-
 /* ---------- Displaying Config ---------- */
 .toggle-off{
     display: none;
@@ -51,4 +42,25 @@
     height: 20px;
     font-weight: 800;
     text-align: center;
+}
+
+/* ---------- Side Menu ---------- */
+.side-menu{
+    background-image: url('../img/Wood.jpg');
+    width: 500px;
+    height: 500px;
+    border: solid 5px black;
+    position: relative;
+    text-align: center;
+    float: right;
+}
+
+.side-title{
+    padding-top: 30px;
+}
+
+.valueGuess{
+    font-weight: 800;
+    font-size: 35px;
+    padding: 10px;
 }

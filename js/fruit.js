@@ -2,9 +2,11 @@ function Fruit(){
     this.x;
     this.y;
 
+    
     this.pickLocation = function(){
-        this.x = (Math.floor(Math.random()*rows-1))*scale;
-        this.y = (Math.floor(Math.random()*columns-1))*scale;
+        this.x = Math.abs((Math.floor(Math.random()*rows-1))*scale)%500;
+        this.y = Math.abs((Math.floor(Math.random()*columns-1))*scale)%500;
+        
     }
 
     this.pickLocation2 = function(){
