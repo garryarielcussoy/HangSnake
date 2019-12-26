@@ -1,0 +1,32 @@
+.canvas-container{
+    text-align: center;
+    width: 100%;
+}
+
+.canvas{
+    background-color: aqua;
+    width: 600px;
+    height: 600px;
+    z-index: 1;
+    position: relative;
+}
+
+#snake{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* ---------- Placing the Words ---------- */
+.letter0, .letter1, .letter2, .letter3, .letter4, .letter5, .letter6, .letter7, .letter8, .letter9, .letter10, .letter11, .letter12, .letter13, .letter14, .letter15{
+    position: absolute;
+    font-size: 10pt;
+    color: black;
+    width: 20px;
+    height: 20px;
+    font-weight: 700;
+}
