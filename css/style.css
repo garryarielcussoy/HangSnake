@@ -14,7 +14,8 @@
 
 /* ---------- Main Menu ---------- */
 .main-menu{
-    background-image: url('../img/Wood.jpg');
+    background-image: url('../img/facebook_cover_photo_2.png');
+    background-position: center;
     width: 1273px;
     height: 350px;
     border: solid 5px black;
@@ -30,7 +31,18 @@
 }
 
 .play-game{
-    font-size: 1.2em;
+    font-size: 2em;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 230px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.play-game:hover{
+    color: #white;
+    background-color: #00F701;
 }
 
 /* ---------- Placing the Words ---------- */
