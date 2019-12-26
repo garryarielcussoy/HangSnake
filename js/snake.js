@@ -62,7 +62,7 @@ function Snake(){
     }
 
     this.eat = function(fruit){
-        if (this.x === fruit.x && this.y === fruit.y){
+        if (this.x === fruit.x && this.y+10 === fruit.y){
             this.total++;    
             return true
         }
