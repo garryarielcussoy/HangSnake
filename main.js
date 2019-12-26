@@ -55,4 +55,6 @@ for (let index = 0; index < letters.length; index++){
 function letsPlay(){
     let mainGame = document.getElementById("main-game");
     let mainMenu = document.getElementById("main-menu");
+    mainMenu.setAttribute("class", "toggle-off");
+    mainGame.setAttribute("class", "toggle-on");
 }

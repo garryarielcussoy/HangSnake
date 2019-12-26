@@ -9,7 +9,6 @@
     width: 500px;
     height: 500px;
     border: solid 5px black;
-    z-index: 1;
     position: relative;
 }
 
@@ -17,7 +16,6 @@
     width: 20px;
     height: 20px;
     background-color: blue;
-    z-index: 0;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -34,7 +32,6 @@
     width: 500px;
     height: 350px;
     border: solid 5px black;
-    z-index: 1;
     position: relative;
     text-align: center;
     padding-top: 150px;
