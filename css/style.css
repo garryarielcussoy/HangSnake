@@ -75,10 +75,54 @@
 
 .side-title{
     padding-top: 30px;
+    font-size: 3em;
+}
+
+.category{
+    color: blue;
+    font-size: 2.4em;
+}
+
+.category-name{
+    color: blue;
+    font-size: 2.2em;
 }
 
 .valueGuess{
     font-weight: 800;
     font-size: 35px;
-    padding: 10px;
+    padding: 0 10px;
+    margin: 50px 0;
+}
+
+.lives-bar{
+    color: red;
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+}
+
+.play-again{
+    font-size: 25px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-left: 130px;
+    margin-right: 130px;
+    transition: 0.8s;
+}
+
+.play-again:hover{
+    color: #F7F7F7;
+    background-color: #7BA529;
+    transition: 1s;
+}
+
+/* ---------- Advertisement ---------- */
+#advertisement{
+    height: 500px;
+    width: 200px;
+    border: black 5px solid;
+    float: right;
 }

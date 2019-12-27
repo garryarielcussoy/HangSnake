@@ -37,19 +37,115 @@ function Snake(){
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
+        // Dinding A Horizontal
+        if (this.x >= 40 && this.x <= 210 && this.y === 40){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        } 
+
+        // Dinding A Vertical
+        if (this.y >= 40 && this.y <= 130 && this.x === 40){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+        
+        // Dinding B Horizontal
+        if (this.x >= 280 && this.x <= 450 && this.y === 440){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        } 
+
+        // Dinding B Vertical
+        if (this.y >= 360 && this.y <= 450 && this.x === 440){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Tengah Horizontal
+        if (this.x >= 140 && this.x <= 340 && this.y === 240){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Tengah Vertical
+        if (this.y >= 140 && this.y <= 340 && this.x === 240){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Kecil Bawah Kiri
+        if (this.y >= 420 && this.y <= 440 && this.x >= 40 && this.x <= 60){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Kecil Atas Kanan
+        if (this.y >= 40 && this.y <= 60 && this.x >= 420 && this.x <= 440){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
+            alert('Game Over!')
+            return -1
+        }
+
         if (this.x >= canvas.width){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             alert('Game Over!')
             return -1
         }
         else if (this.y >= canvas.height){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             alert('Game Over!')
             return -1
         }
         else if (this.x < 0){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             alert('Game Over!')
             return -1
         }
         else if (this.y < 0){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             alert('Game Over!')
             return -1
         }
@@ -90,7 +186,11 @@ function Snake(){
         for (var i=0; i<this.tail.length; i++){
             if (this.x === this.tail[i].x && this.y === this.tail[i].y){
                 this.total++;
-                alert('You lose!')
+                let backgroundmusic = document.getElementById("backgroundmusic");
+                backgroundmusic.pause();
+                let crashmusic = document.getElementById("crash");
+                crashmusic.play();
+                alert('Bunuh Diri!!!')
                 return -2;
             }
         }   
