@@ -36,7 +36,8 @@
     font-weight: 700;
     border: 2px solid #0099DC;
     border-radius: 20px;
-    background-color: white;
+    color: #F7F7F7;
+    background-color: #7BA529;
     margin-top: 220px;
     margin-left: 500px;
     margin-right: 500px;
@@ -46,8 +47,8 @@
 }
 
 .play-game:hover{
-    color: #F7F7F7;
-    background-color: #7BA529;
+    color: #FEC045;
+    background-color: #02B4B6;
     transition: 1s;
 }
 
@@ -74,7 +75,7 @@
 }
 
 .side-title{
-    padding-top: 30px;
+    padding-top: 15px;
     font-size: 3em;
 }
 
@@ -105,24 +106,39 @@
 .play-again{
     font-size: 25px;
     font-weight: 700;
-    background-color: white;
+    color: #F7F7F7;
+    background-color: #7BA529;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 130px;
     margin-right: 130px;
     transition: 0.8s;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid #0099DC;
 }
 
 .play-again:hover{
     color: #F7F7F7;
-    background-color: #7BA529;
+    background-color: #005266;
     transition: 1s;
+    border: 2px solid #0099DC;
 }
 
 /* ---------- Advertisement ---------- */
 #advertisement{
     height: 500px;
-    width: 200px;
-    border: black 5px solid;
+    width: 238px;
     float: right;
+    margin-right: 7px;
+}
+
+.bola {
+    width: 230px;
+    height: 230px;
+}
+
+.toped {
+    width: 238px;
+    height: 282px;
 }
