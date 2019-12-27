@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hang Snake</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+    <div id="main-menu">
+        <div class="main-menu">
+            <div class="game-title"></div>
+            <br />
+            <br />
+            <div class="play-game" onclick="letsPlay()">Lets Play</div>
+        </div>
+    </div>
+    <div id="main-game" class="toggle-off">
+        <div class="canvas-container">
+            <div class="side-menu">
+                <h1 class="side-title" id="side-title">Guess the Word</h1>
+                <div class="side-guess" id="side-guess"></div>
+            </div>
+            <div id="advertisement" class="toggle-off">
+                <img class="bola" src="https://media.giphy.com/media/wBetuIgFkUTnO/giphy.gif">
+                <img class="toped" src="../tokped.gif">
+            </div>
+            <canvas id="canvas" class="canvas" height="500" width="500" style="background-color: #333642"></canvas>
+        </div>
+    </div>
+    <audio loop id="backgroundmusic">
+        <source src="../img/hime.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="winning">
+        <source src="../img/Winning.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="crash">
+            <source src="../img/crash.mp3" type="audio/mpeg" />
+    </audio>
+</body>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/fruit.js"></script>
+<script type="text/javascript" src="../js/snake.js"></script>
+<script type="text/javascript" src="../js/draw.js"></script>
+
+</html>
