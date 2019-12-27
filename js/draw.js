@@ -42,10 +42,10 @@ var snake;
     categoryName.appendChild(categoryNameText);
     categoryName.setAttribute("class", "category-name");
     sideGuess.appendChild(categoryName);
+    
     livesBar = document.createElement("div");
-    livesBar.setAttribute("class", "lives-bar");
-    livesBarText = document.createTextNode("Lives : 3");
-    livesBar.appendChild(livesBarText);
+    livesBar.setAttribute("class", "lives-bar-full");
+    livesBar.innerHTML = "LIVES";
     sideGuess.appendChild(livesBar);
 
     for (i = 0; i< toGuess.length; i++){
@@ -172,7 +172,15 @@ var snake;
                 }
                 else{
                     lives = lives - 1;
-                    livesBar.innerHTML = `Lives : ${lives}`;
+                    if (lives === 2){
+                        livesBar.setAttribute("class", "lives-bar-hit-once")
+                    }
+                    else if (lives === 1){
+                        livesBar.setAttribute("class", "lives-bar-hit-twice")
+                    }
+                    else if (lives === 0){
+                        livesBar.setAttribute("class", "lives-bar-empty")
+                    }
                 }
                 if (target === 0){
                     clearInterval(checkGame);
