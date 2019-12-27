@@ -13,3 +13,4 @@ function letsPlay(){
     let backgroundMusic = document.getElementById("backgroundmusic");
     backgroundMusic.play();
 }
+
