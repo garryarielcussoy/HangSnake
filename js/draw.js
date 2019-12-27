@@ -32,7 +32,7 @@ var snake;
     // Setting the side menu
     sideGuess = document.getElementById("side-guess");
 
-    categoryText = document.createTextNode("Category");
+    categoryText = document.createTextNode("Category :");
     category = document.createElement("h1");
     categoryText = category.appendChild(categoryText);
     category.setAttribute("class", "category");
@@ -106,10 +106,10 @@ var snake;
     }
 
     // Dinding Tengah
-    for (x = 140; x<=340; x = x+20){
+    for (x = 140; x<=360; x = x+20){
         sumOfCoordinat.push(formula(x, 240));
     }
-    for (y = 140; y<=340; y = y+20){
+    for (y = 140; y<=360; y = y+20){
         sumOfCoordinat.push(formula(240, y));
     }
 
