@@ -75,7 +75,7 @@ var snake;
         return (100 * x) + y;
     }
 
-    sumOfCoordinat = [0, 2020, 4420, 4440, 6420, 6440, 42040, 42060, 44040, 44060];
+    sumOfCoordinat = [0, 2020, 4420, 4440, 4460, 6420, 6440, 6460, 8420, 8440, 8460, 42040, 42060, 42080, 44040, 44060, 44080, 46040, 46060, 46080];
 
     // Wall A
     for (x = 40; x<=200; x = x+20){
@@ -109,8 +109,14 @@ var snake;
     for (x = 140; x<=360; x = x+20){
         sumOfCoordinat.push(formula(x, 240));
     }
+    for (x = 140; x<=360; x = x+20){
+        sumOfCoordinat.push(formula(x, 260));
+    }
     for (y = 140; y<=360; y = y+20){
         sumOfCoordinat.push(formula(240, y));
+    }
+    for (y = 140; y<=360; y = y+20){
+        sumOfCoordinat.push(formula(260, y));
     }
 
     console.log(randomLetters);
