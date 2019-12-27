@@ -193,13 +193,13 @@ var snake;
         if (status === -2 || collision === -1){
             let backgroundmusic = document.getElementById("backgroundmusic");
             backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             clearInterval(checkGame);
             snake.stop();
         }
 
         if (target === 0 || collision === -1 || status === -2){
-            let backgroundmusic = document.getElementById("backgroundmusic");
-            backgroundmusic.pause();
             clearInterval(checkGame);
             playAgain = document.createElement("div");
             playAgainText = document.createTextNode("Play Again?");
@@ -212,6 +212,8 @@ var snake;
         if (lives === 0){
             let backgroundmusic = document.getElementById("backgroundmusic");
             backgroundmusic.pause();
+            let crashmusic = document.getElementById("crash");
+            crashmusic.play();
             alert("You lose!");
             snake.stop();
             clearInterval(checkGame);
