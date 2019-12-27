@@ -9,8 +9,8 @@ var snake;
 (function setup(){
 
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var animalList = ['CHICKEN', 'SNAKE', 'TIGER', 'PANDA', 'OCTOPUS'];
-    var fruitsList = ['AVOCADO', 'ORANGE', 'APPLE', 'MANGO', 'CHERRY'];
+    var animalList = ['CHICKEN', 'SNAKE', 'TIGER', 'PANDA', 'OCTOPUS', 'SQUID'];
+    var fruitsList = ['AVOCADO', 'ORANGE', 'APPLE', 'MANGO', 'CHERRY', 'BANANA'];
     var caountryList = ['GERMANY', 'FRANCE', 'ENGLAND', 'JAPAN', 'DENMARK'];
     var allList = [animalList, fruitsList, caountryList];
     var categoryList = ["Animal", "Fruit", "Country"];
