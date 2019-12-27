@@ -167,7 +167,7 @@ var snake;
                 
                     sideGuessChange = document.getElementById("side-guess");
                     for (j = 0; j<listIndexLetter.length; j++){
-                        sideGuessChange.children[listIndexLetter[j]+4].innerHTML = `${randomLetters[i]} `;
+                        sideGuessChange.children[listIndexLetter[j]+3].innerHTML = `${randomLetters[i]} `;
                     }
                 }
                 else{
