@@ -12,6 +12,10 @@
     display: none;
 }
 
+body{
+    margin-top: 70px;
+}
+
 /* ---------- Main Menu ---------- */
 .main-menu{
     background-image: url('../img/facebook_cover_photo_2.png');
@@ -85,12 +89,12 @@ h1{
 }
 
 .category{
-    color: blue;
+    color: initial;
     font-size: 2.4em;
 }
 
 .category-name{
-    color: blue;
+    color: brown;
     font-size: 2.2em;
 }
 
