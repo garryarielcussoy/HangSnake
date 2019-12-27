@@ -80,7 +80,6 @@
 .category-name{
     color: blue;
     font-size: 2.2em;
-    margin-bottom: 80px;
 }
 
 .valueGuess{
@@ -88,6 +87,13 @@
     font-size: 35px;
     padding: 0 10px;
     margin: 50px 0;
+}
+
+.lives-bar{
+    color: red;
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-bottom: 35px;
 }
 
 .play-again{
@@ -103,4 +109,12 @@
 .play-again:hover{
     color: white;
     background-color: #00F701;
+}
+
+/* ---------- Advertisement ---------- */
+#advertisement{
+    height: 500px;
+    width: 200px;
+    border: black 5px solid;
+    float: right;
 }

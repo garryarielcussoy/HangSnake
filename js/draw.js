@@ -11,8 +11,9 @@ var snake;
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var animalList = ['CHICKEN', 'SNAKE', 'TIGER', 'PANDA', 'OCTOPUS'];
     var fruitsList = ['AVOCADO', 'ORANGE', 'APPLE', 'MANGO', 'CHERRY'];
-    var allList = [animalList, fruitsList];
-    var categoryList = ["Animal", "Fruit"];
+    var caountryList = ['GERMANY', 'FRANCE', 'ENGLAND', 'JAPAN', 'DENMARK'];
+    var allList = [animalList, fruitsList, caountryList];
+    var categoryList = ["Animal", "Fruit", "Country"];
 
     // Randoming the category
     randomCategory = Math.floor(Math.random() * allList.length);
@@ -41,6 +42,11 @@ var snake;
     categoryName.appendChild(categoryNameText);
     categoryName.setAttribute("class", "category-name");
     sideGuess.appendChild(categoryName);
+    livesBar = document.createElement("div");
+    livesBar.setAttribute("class", "lives-bar");
+    livesBarText = document.createTextNode("Lives : 3");
+    livesBar.appendChild(livesBarText);
+    sideGuess.appendChild(livesBar);
 
     for (i = 0; i< toGuess.length; i++){
         underscore = document.createTextNode("_  ");
@@ -52,7 +58,7 @@ var snake;
 
     let answerLetters = randomLetters.map(elem => elem);
 
-    boundLettersInArea = randomLetters.length + 8;
+    boundLettersInArea = randomLetters.length + 5;
     while (randomLetters.length < boundLettersInArea){
         let randomNumb = (Math.floor(Math.random() * 26));
         if (randomLetters.includes(alphabet[randomNumb]) === false){
@@ -73,7 +79,6 @@ var snake;
         uniqueSum = (100000 * fruit.x) + fruit.y; 
         if (sumOfCoordinat.includes(uniqueSum) === false)
         {
-            console.log("Halooo")
             fruitList.push(fruit);
             fruitCoordinat.push([fruit.x, fruit.y]);
             sumOfCoordinat.push(uniqueSum);
@@ -83,6 +88,7 @@ var snake;
     target = answerLetters.length
     let status = 0;
     let collision = 0;
+    let lives = 3;
 
     var checkGame = window.setInterval(()=>{
         ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -113,8 +119,12 @@ var snake;
                 
                     sideGuessChange = document.getElementById("side-guess");
                     for (j = 0; j<listIndexLetter.length; j++){
-                        sideGuessChange.children[listIndexLetter[j]+2].innerHTML = `${randomLetters[i]} `;
+                        sideGuessChange.children[listIndexLetter[j]+3].innerHTML = `${randomLetters[i]} `;
                     }
+                }
+                else{
+                    lives = lives - 1;
+                    livesBar.innerHTML = `Lives : ${lives}`;
                 }
                 if (target === 0){
                     clearInterval(checkGame);
@@ -146,8 +156,20 @@ var snake;
             playAgain.setAttribute("onclick", "reload()");
             sideGuess.appendChild(playAgain);
         }
+
+        if (lives === 0){
+            alert("You lose!");
+            snake.stop();
+            clearInterval(checkGame);
+            playAgain = document.createElement("div");
+            playAgainText = document.createTextNode("Play Again?");
+            playAgain.appendChild(playAgainText);
+            playAgain.setAttribute("class", "play-again");
+            playAgain.setAttribute("onclick", "reload()");
+            sideGuess.appendChild(playAgain);
+        }
         
-    }, 250);
+    }, 100);
 }());
 
 window.addEventListener('keydown', ((evt)=>{
