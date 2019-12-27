@@ -69,14 +69,44 @@ var snake;
     snake = new Snake();
     fruitList = [];
     fruitCoordinat = [];
-    sumOfCoordinat = [0, 40];
+
+    // Formula Coordinate Unique
+    function formula(x, y){
+        return (100 * x) + y;
+    }
+
+    sumOfCoordinat = [0, 2020, 4420, 4440, 6420, 6440, 42040, 42060, 44040, 44060];
+
+    // Wall A
+    for (x = 40; x<=200; x = x+20){
+        sumOfCoordinat.push(formula(x, 40));
+    }
+    for (y = 40; y<=120; y = y+20){
+        sumOfCoordinat.push(formula(40, y));
+    }
+    
+    // Wall B
+    for (x = 280; x<=440; x = x+20){
+        sumOfCoordinat.push(formula(x, 440));
+    }
+    for (y = 360; y<=440; y = y+20){
+        sumOfCoordinat.push(formula(440, y));
+    }
+
+    // Dinding Tengah
+    for (x = 140; x<=340; x = x+20){
+        sumOfCoordinat.push(formula(x, 240));
+    }
+    for (y = 140; y<=340; y = y+20){
+        sumOfCoordinat.push(formula(240, y));
+    }
 
     console.log(randomLetters);
     console.log(fruitCoordinat);
     while (fruitList.length < randomLetters.length){
         fruit = new Fruit();
         fruit.pickLocation();
-        uniqueSum = (100000 * fruit.x) + fruit.y; 
+        uniqueSum = (100 * fruit.x) + fruit.y; 
         if (sumOfCoordinat.includes(uniqueSum) === false)
         {
             fruitList.push(fruit);

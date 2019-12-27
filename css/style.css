@@ -110,11 +110,13 @@
     margin-top: 40px;
     margin-left: 130px;
     margin-right: 130px;
+    transition: 0.8s;
 }
 
 .play-again:hover{
-    color: white;
-    background-color: #00F701;
+    color: #F7F7F7;
+    background-color: #7BA529;
+    transition: 1s;
 }
 
 /* ---------- Advertisement ---------- */
