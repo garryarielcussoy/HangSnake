@@ -31,18 +31,24 @@
 }
 
 .play-game{
-    font-size: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.8em;
     font-weight: 700;
+    border: 2px solid #0099DC;
     border-radius: 20px;
     background-color: white;
-    margin-top: 230px;
+    margin-top: 220px;
     margin-left: 500px;
     margin-right: 500px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.8s;
 }
 
 .play-game:hover{
-    color: #white;
-    background-color: #00F701;
+    color: #F7F7F7;
+    background-color: #7BA529;
+    transition: 1s;
 }
 
 /* ---------- Placing the Words ---------- */
