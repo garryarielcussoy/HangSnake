@@ -81,7 +81,13 @@ var snake;
     for (x = 40; x<=200; x = x+20){
         sumOfCoordinat.push(formula(x, 40));
     }
+    for (x = 40; x<=200; x = x+20){
+        sumOfCoordinat.push(formula(x, 60));
+    }
     for (y = 40; y<=120; y = y+20){
+        sumOfCoordinat.push(formula(40, y));
+    }
+    for (y = 60; y<=120; y = y+20){
         sumOfCoordinat.push(formula(40, y));
     }
     
@@ -89,8 +95,14 @@ var snake;
     for (x = 280; x<=440; x = x+20){
         sumOfCoordinat.push(formula(x, 440));
     }
+    for (x = 280; x<=440; x = x+20){
+        sumOfCoordinat.push(formula(x, 460));
+    }
     for (y = 360; y<=440; y = y+20){
         sumOfCoordinat.push(formula(440, y));
+    }
+    for (y = 360; y<=440; y = y+20){
+        sumOfCoordinat.push(formula(460, y));
     }
 
     // Dinding Tengah
@@ -173,11 +185,15 @@ var snake;
         }
 
         if (status === -2 || collision === -1){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
             clearInterval(checkGame);
             snake.stop();
         }
 
         if (target === 0 || collision === -1 || status === -2){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
             clearInterval(checkGame);
             playAgain = document.createElement("div");
             playAgainText = document.createTextNode("Play Again?");
@@ -188,6 +204,8 @@ var snake;
         }
 
         if (lives === 0){
+            let backgroundmusic = document.getElementById("backgroundmusic");
+            backgroundmusic.pause();
             alert("You lose!");
             snake.stop();
             clearInterval(checkGame);
