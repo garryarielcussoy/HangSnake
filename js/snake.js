@@ -37,6 +37,54 @@ function Snake(){
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
+        // Dinding A Horizontal
+        if (this.x >= 40 && this.x <= 210 && this.y === 40){
+            alert('Game Over!')
+            return -1
+        } 
+
+        // Dinding A Vertical
+        if (this.y >= 40 && this.y <= 130 && this.x === 40){
+            alert('Game Over!')
+            return -1
+        }
+        
+        // Dinding B Horizontal
+        if (this.x >= 280 && this.x <= 450 && this.y === 440){
+            alert('Game Over!')
+            return -1
+        } 
+
+        // Dinding B Vertical
+        if (this.y >= 360 && this.y <= 450 && this.x === 440){
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Tengah Horizontal
+        if (this.x >= 140 && this.x <= 340 && this.y === 240){
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Tengah Vertical
+        if (this.y >= 140 && this.y <= 340 && this.x === 240){
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Kecil Bawah Kiri
+        if (this.y >= 420 && this.y <= 440 && this.x >= 40 && this.x <= 60){
+            alert('Game Over!')
+            return -1
+        }
+
+        // Dinding Kecil Atas Kanan
+        if (this.y >= 40 && this.y <= 60 && this.x >= 420 && this.x <= 440){
+            alert('Game Over!')
+            return -1
+        }
+
         if (this.x >= canvas.width){
             alert('Game Over!')
             return -1
