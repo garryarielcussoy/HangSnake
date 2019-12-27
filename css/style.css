@@ -65,13 +65,14 @@
 
 /* ---------- Side Menu ---------- */
 .side-menu{
-    background-image: url('../img/Wood.jpg');
+    background-image: url('../img/background1.jpg');
     width: 500px;
     height: 500px;
     border: solid 5px black;
     position: relative;
     text-align: center;
     float: right;
+    background-size: cover;
 }
 
 .side-title{
