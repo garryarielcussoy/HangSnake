@@ -41,7 +41,7 @@
 }
 
 .play-game:hover{
-    color: #white;
+    color: white;
     background-color: #00F701;
 }
 
@@ -69,10 +69,38 @@
 
 .side-title{
     padding-top: 30px;
+    font-size: 3em;
+}
+
+.category{
+    color: blue;
+    font-size: 2.4em;
+}
+
+.category-name{
+    color: blue;
+    font-size: 2.2em;
+    margin-bottom: 80px;
 }
 
 .valueGuess{
     font-weight: 800;
     font-size: 35px;
-    padding: 10px;
+    padding: 0 10px;
+    margin: 50px 0;
+}
+
+.play-again{
+    font-size: 25px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+.play-again:hover{
+    color: white;
+    background-color: #00F701;
 }

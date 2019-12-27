@@ -10,9 +10,17 @@ var snake;
 
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var animalList = ['CHICKEN', 'SNAKE', 'TIGER', 'PANDA', 'OCTOPUS'];
-    
-    let randomNumb = (Math.floor(Math.random() * animalList.length));
-    let toGuess = animalList[randomNumb];
+    var fruitsList = ['AVOCADO', 'ORANGE', 'APPLE', 'MANGO', 'CHERRY'];
+    var allList = [animalList, fruitsList];
+    var categoryList = ["Animal", "Fruit"];
+
+    // Randoming the category
+    randomCategory = Math.floor(Math.random() * allList.length);
+    choosenList = allList[randomCategory];
+    choosenCategory = categoryList[randomCategory];
+
+    let randomNumb = (Math.floor(Math.random() * choosenList.length));
+    let toGuess = choosenList[randomNumb];
     let randomLetters = [];
     for (index in toGuess){
         if (randomLetters.includes(toGuess[index]) === false){
@@ -22,17 +30,29 @@ var snake;
 
     // Setting the side menu
     sideGuess = document.getElementById("side-guess");
+
+    categoryText = document.createTextNode("Category");
+    category = document.createElement("h1");
+    categoryText = category.appendChild(categoryText);
+    category.setAttribute("class", "category");
+    sideGuess.appendChild(category);
+    categoryName = document.createElement("h2");
+    categoryNameText = document.createTextNode(`${choosenCategory}`);
+    categoryName.appendChild(categoryNameText);
+    categoryName.setAttribute("class", "category-name");
+    sideGuess.appendChild(categoryName);
+
     for (i = 0; i< toGuess.length; i++){
         underscore = document.createTextNode("_  ");
         underscoreDiv = document.createElement("span");
         underscoreDiv.appendChild(underscore);
         underscoreDiv.setAttribute("class", "valueGuess")
         sideGuess.appendChild(underscoreDiv);
-    } 
+    }
 
     let answerLetters = randomLetters.map(elem => elem);
 
-    boundLettersInArea = randomLetters.length + 5;
+    boundLettersInArea = randomLetters.length + 8;
     while (randomLetters.length < boundLettersInArea){
         let randomNumb = (Math.floor(Math.random() * 26));
         if (randomLetters.includes(alphabet[randomNumb]) === false){
@@ -43,7 +63,7 @@ var snake;
     snake = new Snake();
     fruitList = [];
     fruitCoordinat = [];
-    sumOfCoordinat = [];
+    sumOfCoordinat = [0, 40];
 
     console.log(randomLetters);
     console.log(fruitCoordinat);
@@ -64,7 +84,7 @@ var snake;
     let status = 0;
     let collision = 0;
 
-    window.setInterval(()=>{
+    var checkGame = window.setInterval(()=>{
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         for (i=0; i< randomLetters.length; i++){
             fruitList[i].draw(randomLetters[i]);
@@ -93,10 +113,11 @@ var snake;
                 
                     sideGuessChange = document.getElementById("side-guess");
                     for (j = 0; j<listIndexLetter.length; j++){
-                        sideGuessChange.children[listIndexLetter[j]].innerHTML = `${randomLetters[i]} `;
+                        sideGuessChange.children[listIndexLetter[j]+2].innerHTML = `${randomLetters[i]} `;
                     }
                 }
                 if (target === 0){
+                    clearInterval(checkGame);
                     snake.stop()
                     let backgroundmusic = document.getElementById("backgroundmusic");
                     backgroundmusic.pause();
@@ -112,7 +133,18 @@ var snake;
         }
 
         if (status === -2 || collision === -1){
+            clearInterval(checkGame);
             snake.stop();
+        }
+
+        if (target === 0 || collision === -1 || status === -2){
+            clearInterval(checkGame);
+            playAgain = document.createElement("div");
+            playAgainText = document.createTextNode("Play Again?");
+            playAgain.appendChild(playAgainText);
+            playAgain.setAttribute("class", "play-again");
+            playAgain.setAttribute("onclick", "reload()");
+            sideGuess.appendChild(playAgain);
         }
         
     }, 250);
